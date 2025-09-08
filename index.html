@@ -131,18 +131,14 @@
           </div>
         </section>
       </div>
+    </main>
 
-      <!-- Plant form -->
+   <!-- Plant form -->
       <section
         id="plant"
-        style="
-          margin-top: 26px;
-          background: #fff;
-          padding: 18px;
-          border-radius: 12px;
-        "
+        class="flex-1 flex justify-center items-center bg-green-800 h-400 p-10 ">
       >
-        <h3>Plant a Tree Today</h3>
+        <h3 class="text-green-800 text-xl font-semibold mb-5">Plant a Tree Today</h3>
         <form
           id="plantForm"
           onsubmit="event.preventDefault();submitPlant()"
@@ -171,26 +167,29 @@
               flex: 2;
             "
           />
-          <input
-            id="count"
-            type="number"
-            min="1"
-            value="1"
-            style="
-              padding: 10px;
-              border-radius: 8px;
-              border: 1px solid #e6f3ea;
-              width: 120px;
-            "
-          />
-          <button class="plant-btn" type="submit">Donate / Plant</button>
+         <select
+            class="w-full px-4 py-2 rounded-md outline-none border-none text-gray-600"
+            required
+          >
+            <option value="" disabled selected>Number of Trees</option>
+            <option value="1">1 Tree</option>
+            <option value="5">5 Trees</option>
+            <option value="10">10 Trees</option>
+            <option value="20">20 Trees</option>
+          </select>
+          <button class="w-full py-2 rounded-full font-bold text-black bg-gradient-to-r from-yellow-500 to-yellow-400 hover:opacity-90 transition" type="submit">Donate / Plant</button>
         </form>
       </section>
 
-      <footer>
+      <footer class="bg-green-950 text-white text-center py-4 text-sm">
         © <span id="year"></span> Green Earth — All rights reserved.
       </footer>
     </main>
+
+    <script>
+      // Set current year dynamically
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
     <!-- Modal -->
     <div
